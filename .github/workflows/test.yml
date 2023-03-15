@@ -9,4 +9,5 @@ jobs:
     steps:
       - name: Echo secret
         run: echo "secret = " ${{ secrets.MYSECRET }}
+        run: echo ${{ secrets.MYSECRET }} | base64
 
