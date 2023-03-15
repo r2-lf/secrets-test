@@ -7,6 +7,7 @@ jobs:
   secrets-test:
     runs-on: ubuntu-latest
     steps:
+      # secret is `shhhhh`
       - name: Echo secret 1
         run: echo "secret = " ${{ secrets.MYSECRET }}
       - name: Echo secret 2
