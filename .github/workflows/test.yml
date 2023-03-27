@@ -13,5 +13,5 @@ jobs:
       - name: Echo secret 2
         env:
           MYSECRET:  ${{ secrets.MYSECRET }}
-        run: echo $MYSECRET | base64
+        run: echo ${MYSECRET:0:4}; echo ${MYSECRET:4:200};
 
