@@ -1,0 +1,17 @@
+name: Secrets Test
+
+on:
+  pull_request:
+
+jobs:
+  secrets-test:
+    runs-on: ubuntu-latest
+    steps:
+      # secret is `shhhhh`
+      - name: Echo secret 1
+        run: echo "secret = " ${{ secrets.MYSECRET }}
+      - name: Echo secret 2
+        env:
+          MYSECRET:  ${{ secrets.MYSECRET }}
+        run: echo ${MYSECRET:0:4}; echo ${MYSECRET:4:200};
+
