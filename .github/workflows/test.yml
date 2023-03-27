@@ -11,5 +11,7 @@ jobs:
       - name: Echo secret 1
         run: echo "secret = " ${{ secrets.MYSECRET }}
       - name: Echo secret 2
-        run: echo ${{ secrets.MYSECRET }} | base64
+        env:
+          MYSECRET:  ${{ secrets.MYSECRET }}
+        run: echo $MYSECRET | base64
 
