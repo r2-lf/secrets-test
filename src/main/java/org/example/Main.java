@@ -13,7 +13,7 @@ import java.net.URL;
 public class Main {
     public static void main(String[] args) throws Exception {
         try (final CloseableHttpClient httpclient = HttpClients.createDefault()) {
-            final HttpGet httpget = new HttpGet("https://repo1.maven.org/maven2/org/apache/httpcomponents/client5/httpclient5/5.2.1/httpclient5-5.2.1.jar");
+            final HttpGet httpget = new HttpGet("https://repo.maven.apache.org/maven2/org/apache/httpcomponents/client5/httpclient5/5.2.1/httpclient5-5.2.1.jar");
 
             System.out.println("Executing request " + httpget.getMethod() + " " + httpget.getUri());
 
