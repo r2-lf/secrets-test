@@ -10,6 +10,8 @@ jobs:
       matrix:
         thread: [1, 2, 3]
     steps:
+      - uses: actions/checkout@v2
+
       - name: Set up JDK 17 (# ${{ matrix.thread }})
         uses: actions/setup-java@v3
         with:
