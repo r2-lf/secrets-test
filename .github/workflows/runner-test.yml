@@ -10,7 +10,7 @@ jobs:
       matrix:
         thread: [1, 2, 3]
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: Set up JDK 17 (# ${{ matrix.thread }})
         uses: actions/setup-java@v3
@@ -25,3 +25,5 @@ jobs:
       - name: Run (# ${{ matrix.thread }})
         run:  java -classpath "target/classes:target/lib/httpclient5-5.2.1.jar:target/lib/httpcore5-5.2.jar:target/lib/httpcore5-h2-5.2.jar:target/lib/slf4j-api-1.7.36.jar" org.example.Main
 
+      - name: Tracepath
+        run:  tracepath repo.maven.apache.org
